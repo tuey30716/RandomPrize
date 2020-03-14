@@ -28,7 +28,7 @@
               </tr>
               <tr>
                 <th scope="row">รางวัลเลขท้าย 2 ตัว</th>
-                <td colspan="3">{{str_pad($prizenum['lasttwo'], 3, '0', STR_PAD_LEFT)}}</td>
+                <td colspan="3">{{str_pad($prizenum['lasttwo'], 2, '0', STR_PAD_LEFT)}}</td>
               </tr>
 
             </tbody>
@@ -50,5 +50,9 @@
           </div>  
         </div>       
          </form>
+         <div class="col-sm">
+          <p>{{$prizetext}}</p>
+       </div>
+
 @endsection
 
