@@ -21,7 +21,7 @@
                 <td>{{str_pad($prizenum['secondprize3'], 3, '0', STR_PAD_LEFT)}}</td>
               </tr>
               <tr>
-                <th scope="row">รางวัลที่เลขข้างเคียงรางวัลที่ 1</th>
+                <th scope="row">รางวัลเลขข้างเคียงรางวัลที่ 1</th>
                 <td >{{str_pad($prizenum['nearfirst1'], 3, '0', STR_PAD_LEFT)}}</td>
                 <td colspan="2">{{str_pad($prizenum['nearfirst2'], 3, '0', STR_PAD_LEFT)}}</td>
                 
