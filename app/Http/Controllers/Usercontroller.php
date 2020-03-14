@@ -86,22 +86,22 @@ class Usercontroller extends Controller
         elseif($getnum==$prizenum['lasttwo']){
             $text="ถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['firstprize']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['firstprize']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['secondprize1']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['secondprize1']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['secondprize2']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['secondprize2']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['secondprize3']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['secondprize3']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['nearfirst1']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['nearfirst1']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
         }
-        elseif($getnum==$prizenum['nearfirst2']&&$prizenum['lasttwo']==substr($getnum, -7)){
+        elseif($getnum==$prizenum['nearfirst2']&&$prizenum['lasttwo']==substr($getnum, -2)){
             $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
         }
         else{
