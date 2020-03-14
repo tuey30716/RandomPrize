@@ -47,7 +47,7 @@ class Usercontroller extends Controller
         $this->zerofill($number['lasttwo'],2);
         file_put_contents("prizenum.txt", serialize($number));
 
-     return view('index')->with(['prizenum' =>  $number]);;
+     return view('index')->with(['prizenum' =>  $number]);
     }
     
     public function zerofill($num,$count){
@@ -64,7 +64,49 @@ class Usercontroller extends Controller
 
     public function check(Request $request) {
         $getnum = $request->input('typenum');
-        $prizenum=file_get_contents("prizenum.txt", unserialize($number));
-        return view("/",$getnum);
+        $prizenum=unserialize(file_get_contents('prizenum.txt'));
+        if($getnum==$prizenum['firstprize']){
+            $text="ถูกรางวัลที่ 1";
+        }
+        elseif($getnum==$prizenum['secondprize1']){
+            $text="ถูกรางวัลที่ 2";
+        }
+        elseif($getnum==$prizenum['secondprize2']){
+            $text="ถูกรางวัลที่ 2";
+        }
+        elseif($getnum==$prizenum['secondprize3']){
+            $text="ถูกรางวัลที่ 2";
+        }
+        elseif($getnum==$prizenum['nearfirst1']){
+            $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1";
+        }
+        elseif($getnum==$prizenum['nearfirst2']){
+            $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1";
+        }
+        elseif($getnum==$prizenum['lasttwo']){
+            $text="ถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['firstprize']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['secondprize1']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['secondprize2']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['secondprize3']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลที่ 2 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['nearfirst1']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        elseif($getnum==$prizenum['nearfirst2']&&$prizenum['lasttwo']==substr($getnum, -7)){
+            $text="ถูกรางวัลเลขข้างเคียงรางวัลที่ 1 และถูกรางวัลเลขท้าย 2 ตัว";
+        }
+        else{
+            $text="ไม่ถูกรางวัลใดเลย";
+        }
+        return view("/")->with(['prizetext' =>  $text]);
 }
 }
