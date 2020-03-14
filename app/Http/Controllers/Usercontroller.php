@@ -20,7 +20,7 @@ class Usercontroller extends Controller
         $number['nearfirst2']= "000";
     
         $number['lasttwo']= "00";
-        return view('index')->with(['prizenum' =>  $number]);
+        return view('index')->with(['prizenum' =>  $number])->with(['prizetext' =>  " "]);
     }
 
     public function randomnumber(){
@@ -47,7 +47,7 @@ class Usercontroller extends Controller
         $this->zerofill($number['lasttwo'],2);
         file_put_contents("prizenum.txt", serialize($number));
 
-     return view('index')->with(['prizenum' =>  $number]);
+     return view('index')->with(['prizenum' =>  $number])->with(['prizetext' =>  ""]);
     }
     
     public function zerofill($num,$count){
@@ -107,6 +107,6 @@ class Usercontroller extends Controller
         else{
             $text="ไม่ถูกรางวัลใดเลย";
         }
-        return view("/")->with(['prizetext' =>  $text]);
+        return view("index")->with(['prizetext' =>  $text])->with(['prizenum' =>  $prizenum]);
 }
 }
