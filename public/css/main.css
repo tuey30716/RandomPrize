@@ -1,0 +1,32 @@
+body {
+    background-color: #7a1717;
+}
+
+.container {
+    padding-top: 5%;
+}
+
+p {
+    color: white;
+}
+.row {
+  padding: 5%;
+  background-color: rgb(88, 88, 88);
+  text-align: center;
+}
+.navbar {
+  background-color: rgb(44, 44, 44);
+}
+
+.table {
+    margin-top: 2%;
+}
+
+th {
+  width: 70%;
+}
+
+input {
+  margin-top: 5%;
+  width: 40%;
+}
